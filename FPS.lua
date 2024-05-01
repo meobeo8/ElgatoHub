@@ -1,4 +1,4 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ScriptLinhTinh/main/BoostFPS"))()
+--loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ScriptLinhTinh/main/BoostFPS"))()
 
 local a = game
 local b = a.Workspace
@@ -9,7 +9,7 @@ d.WaterWaveSpeed = 0
 d.WaterReflectance = 0
 d.WaterTransparency = 0
 c.GlobalShadows = 0
-c.FogEnd = 999
+c.FogEnd = 9999999
 c.Brightness = 0
 c.GlobalShadows = false
 local f = true
@@ -182,9 +182,36 @@ if j.FullBright then
     o.FogEnd = math.huge
     o.FogStart = math.huge
     o.Ambient = Color3.fromRGB(255, 255, 255)
-    o.Brightness = 20
+    o.Brightness = 9999999
     o.ColorShift_Bottom = Color3.fromRGB(255, 255, 255)
     o.ColorShift_Top = Color3.fromRGB(255, 255, 255)
     o.OutdoorAmbient = Color3.fromRGB(255, 255, 255)
     o.Outlines = true
+end
+
+settings().Rendering.QualityLevel = "Level01"
+for i, v in pairs(g:GetDescendants()) do
+if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+v.Material = "Plastic"
+v.Reflectance = 0
+elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+v.Transparency = 1
+elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+v.Lifetime = NumberRange.new(0)
+elseif v:IsA("Explosion") then
+v.BlastPressure = 1
+v.BlastRadius = 1
+elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+v.Enabled = false
+elseif v:IsA("MeshPart") then
+v.Material = "Plastic"
+v.Reflectance = 0
+v.TextureID = 10385902758728957
+end
+end
+
+for i, e in pairs(l:GetChildren()) do
+if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+e.Enabled = false
+end
 end
