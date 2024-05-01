@@ -1,3 +1,5 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ScriptLinhTinh/main/BoostFPS"))()
+
 local a = game
 local b = a.Workspace
 local c = a.Lighting
