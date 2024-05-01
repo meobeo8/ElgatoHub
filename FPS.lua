@@ -1,4 +1,3 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ScriptLinhTinh/main/BoostFPS"))()
 local a = game
 local b = a.Workspace
 local c = a.Lighting
@@ -181,7 +180,7 @@ if j.FullBright then
     o.FogEnd = math.huge
     o.FogStart = math.huge
     o.Ambient = Color3.fromRGB(255, 255, 255)
-    o.Brightness = 5
+    o.Brightness = 20
     o.ColorShift_Bottom = Color3.fromRGB(255, 255, 255)
     o.ColorShift_Top = Color3.fromRGB(255, 255, 255)
     o.OutdoorAmbient = Color3.fromRGB(255, 255, 255)
