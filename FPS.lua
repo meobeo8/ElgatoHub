@@ -11,7 +11,7 @@ c.FogEnd = 555
 c.Brightness = 0
 c.GlobalShadows = false
 local f = true
-for g, h in pairs(game.Workspace.Map:GetDescendants()) do
+for g, h in pairs(game.Workspace.Island:GetDescendants()) do
     if
         h.Name == "Tavern" or h.Name == "SmileFactory" or h.Name == "Tree" or h.Name == "Rocks" or h.Name == "PartHouse" or
             h.Name == "Hotel" or
