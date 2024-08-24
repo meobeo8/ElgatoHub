@@ -467,12 +467,9 @@ function LoadFunction()
                     if game.PlaceId == 6897167394 then
                         loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/FruitSea.lua"))()
                     elseif game.PlaceId == 10260193230 then
-                        if game.Players.LocalPlayer.PlayerGui.LoadingGui.Enabled == true then
-                            for i, v in pairs(getconnections(game:GetService("Players").LocalPlayer.PlayerGui.LoadingGui.PlayBackground.Play.Activated)) do
-                                v.Function()
-                            end
-                        end
                         loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/MemeSea.lua"))()
+                    elseif game.PlaceId == 18688206652 then
+                        loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/LjulPiece2.lua"))()
                     elseif game.PlaceId == 17610616912 then
                         loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/AnimePowerEvolutionSimulator.lua"))()
                     end
