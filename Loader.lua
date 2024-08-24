@@ -462,7 +462,7 @@ function LoadFunction()
                     {TextTransparency = 0.2}
                 ):Play()
                 local id = game.PlaceId
-                if id == 17610616912 or id == 10260193230 or id == 6897167394 then
+                if id == 17610616912 or id == 10260193230 or id == 6897167394 or id == 18688206652 then
                     TitleLoad.Text = "Games Found: " .. game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name
                     if game.PlaceId == 6897167394 then
                         loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/FruitSea.lua"))()
