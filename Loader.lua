@@ -16,5 +16,5 @@ if scriptURL then
     print(GameName)
     loadstring(game:HttpGet(scriptURL))()
 else
-    warn("No script found for this game.")
+    game.Players.LocalPlayer:Kick("This game is not supported or has been removed.")
 end
