@@ -6,6 +6,7 @@ local scripts = {
     [16448761503] = "https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/refs/heads/main/RungSea.lua",
     [18688206652] = "https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/refs/heads/main/LjulPiece2.lua",
     [18968803452] = "https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/refs/heads/main/MuyongPiece.lua",
+    [75972208642796] = "https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/refs/heads/main/JoodPiece2.lua",
     [10260193230] = "https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/refs/heads/main/MemeSea.lua"
 }
 
