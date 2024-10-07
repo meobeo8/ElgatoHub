@@ -9,7 +9,7 @@ function Notify1(va, va1)
 end
 
 function Notify(va)
-    Notify1(va, 5)
+    Notify1(va, 10)
 end
 
 Notify("Use Fluxus as it supports best")
@@ -29,7 +29,6 @@ local placeScripts = {
 
 local scriptName = placeScripts[Place]
 if scriptName then
-    Notify(GameName)
     loadstring(game:HttpGet(baseURL .. scriptName))()
 else
     game.Players.LocalPlayer:Kick("This game is not supported or has been removed.")
