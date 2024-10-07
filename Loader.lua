@@ -8,9 +8,6 @@ if Place == 16448761503 then
 elseif Place == 18688206652 then
     print(GameName)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/refs/heads/main/LjulPiece2.lua"))()
-elseif Place == 18968803452 then
-    print(GameName)
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/refs/heads/main/MuyongPiece.lua"))()
 elseif Place == 75972208642796 then
     print(GameName)
     loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/refs/heads/main/JoodPiece2.lua"))()
