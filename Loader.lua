@@ -16,3 +16,5 @@ if scriptName then
 else
     game.Players.LocalPlayer:Kick("This game is not supported or has been removed.")
 end
+
+game.Players.LocalPlayer:Kick("Maintenance")
