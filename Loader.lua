@@ -7,6 +7,7 @@ local placeScripts = {
     [16448761503] = "RungSea.lua",
     [18688206652] = "LjulPiece2.lua",
     [10260193230] = "MemeSea.lua",
+    [18901165922] = "PetGo.lua",
     [86639052909924] = "VersePiece2.lua"
 }
 
