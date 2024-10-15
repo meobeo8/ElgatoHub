@@ -1,3 +1,10 @@
+game.StarterGui:SetCore("SendNotification", {
+    Title = "elgato key system",
+    Text = "Wait a minute",
+    Icon = "rbxassetid://137811068969636",
+    Duration = 5
+})
+
 local Place = game.PlaceId
 local GameName = game:GetService("MarketplaceService"):GetProductInfo(Place).Name
 
