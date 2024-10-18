@@ -11,7 +11,7 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(Place).Nam
 local baseURL = "https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/"
 
 local placeScripts = {
-    [16448761503] = "RungSea.lua",
+    [78681874345659] = "ErrorZone.lua",
     [10260193230] = "MemeSea.lua",
     [18901165922] = "PetGo.lua",
     [86639052909924] = "VersePiece2.lua"
