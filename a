@@ -6,7 +6,7 @@ if a == 1 or a == 2 then
     local Place = game.PlaceId
     local GameName = game:GetService("MarketplaceService"):GetProductInfo(Place).Name
 
-    local baseURL = "https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/"
+    local baseURL = "https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/a/"
 
     local placeScripts = {
         [78681874345659] = "ErrorZone.lua",
