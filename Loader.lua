@@ -2,7 +2,7 @@ local a = 0
 a = a + 1
 wait(1)
 
-if a == 1 then
+if a == 1 or a == 2 then
     local Place = game.PlaceId
     local GameName = game:GetService("MarketplaceService"):GetProductInfo(Place).Name
 
@@ -17,7 +17,6 @@ if a == 1 then
 
     local scriptName = placeScripts[Place]
     if scriptName then
-       -- loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/LogPrivate.lua"))()
         loadstring(game:HttpGet(baseURL .. scriptName))()
     else
         game.Players.LocalPlayer:Kick("This game is not supported or has been removed")
