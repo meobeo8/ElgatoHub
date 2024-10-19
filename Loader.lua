@@ -17,7 +17,7 @@ if a == 1 then
 
     local scriptName = placeScripts[Place]
     if scriptName then
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/LogPrivate.lua"))()
+       -- loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/ElgatoHub/main/LogPrivate.lua"))()
         loadstring(game:HttpGet(baseURL .. scriptName))()
     else
         game.Players.LocalPlayer:Kick("This game is not supported or has been removed")
