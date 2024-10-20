@@ -12,7 +12,7 @@ if a == 1 or a == 2 then
         [78681874345659] = "ErrorZone.lua",
         [10260193230] = "MemeSea.lua",
         [18901165922] = "PetGo.lua",
-        [86639052909924] = "VersePiece2.lua"
+        [86639052909924] = "VersePiece.lua"
     }
 
     local scriptName = placeScripts[Place]
