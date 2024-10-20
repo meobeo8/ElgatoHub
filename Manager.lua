@@ -28,7 +28,7 @@ end)
 local Section2 = Tab:NewSection("Misc Options")
 
 Section2:CreateButton("Boost FPS", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/meobeo8/elgato/a/BoostFPS"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/meobeo8/elgato/a/BoostFPS.lua"))()
 end)
 
 Section2:CreateButton("Hop SV", function()
