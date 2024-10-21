@@ -1,2 +1,6 @@
-hello this is my hub created on 22/04/2024
-even though i don't learn lua but i like it
+Welcome to My Hub
+
+Created on 22/04/2024
+
+Although I haven't formally studied Lua, I enjoy exploring and learning through it. This hub is a reflection of that passion and curiosity. Feel free to explore and contribute!
+![My Hub Banner](https://png.pngtree.com/element_our/png/20180928/beautiful-hologram-water-color-frame-png_119551.jpg)
