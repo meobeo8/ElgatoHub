@@ -11,6 +11,7 @@ if a == 1 or a == 2 then
     local placeScripts = {
         [78681874345659] = "ErrorZone.lua",
          [10260193230] = "MemeSea.lua",
+         [15049111150] = "SecondPiece.lua",
         [86639052909924] = "VersePiece.lua"
     }
 
