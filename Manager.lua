@@ -1,41 +1,51 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/wizard"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/Library/retard/TurtleUI.lua"))()
 local plr = game.Players.LocalPlayer
 
-local Tab = Library:NewWindow("elgato Manager")
+local Window = library:Window("check your console")
 
-local Section1 = Tab:NewSection("Manager Config")
+-- Manager Config Section (Label)
+Window:Label("Manager Config", Color3.fromRGB(127, 143, 166))
 
+-- Game Selection Dropdown
 local SelectConfig
-
-Section1:CreateDropdown("Select Game", {"Verse Piece", "Meme Sea", "Error Zone", "Second Piece", "Pet Go"}, 1, function(va)
+local dropdown = Window:Dropdown("Select Game", {"Verse Piece", "Meme Sea", "Error Zone", "Second Piece", "Pet Go"}, function(va)
     SelectConfig = va
 end)
 
-Section1:CreateButton("Delete Config", function()
+-- Delete Config Button
+Window:Button("Delete Config", function()
     if SelectConfig then
         local MainFile = "ELGATO HUB/".. SelectConfig.. "/".. plr.Name.. ".json"
         if isfile(MainFile) then
             delfile(MainFile)
             game.Players.LocalPlayer:Kick("Deleted successfully")
         else
-            print("config file not found")
+            warn("Config file not found")
         end
     else
-        print("Please select a game first.")
+        warn("Please select a game first.")
     end
 end)
 
-local Section2 = Tab:NewSection("Misc Options")
+-- Boost FPS Button
+Window:Button("Destroy UI", function()
+    library:Destroy()
+end)
 
-Section2:CreateButton("Boost FPS", function()
+-- Misc Options Section (Label)
+Window:Label("Misc Options", Color3.fromRGB(127, 143, 166))
+
+-- Boost FPS Button
+Window:Button("Boost FPS", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/meobeo8/elgato/a/BoostFPS.lua"))()
 end)
 
-Section2:CreateButton("Hop SV", function()
+-- Hop Server Button
+Window:Button("Hop SV", function()
     httprequest = (syn and syn.request) or (http and http.request) or http_request or (fluxus and fluxus.request) or request
     PlaceId, JobId = game.PlaceId, game.JobId
     HttpService = cloneref(game:GetService("HttpService"))
-    TeleportService = cloneref(game:GetService("TeleportService"))  -- Add this line to define TeleportService
+    TeleportService = cloneref(game:GetService("TeleportService"))
 
     if httprequest then
         local servers = {}
@@ -43,7 +53,7 @@ Section2:CreateButton("Hop SV", function()
         local body = HttpService:JSONDecode(req.Body)
 
         if body and body.data then
-            for i, v in next, body.data do
+            for _, v in next, body.data do
                 if type(v) == "table" and tonumber(v.playing) and tonumber(v.maxPlayers) and v.playing < v.maxPlayers and v.id ~= JobId then
                     table.insert(servers, 1, v.id)
                 end
@@ -53,17 +63,19 @@ Section2:CreateButton("Hop SV", function()
         if #servers > 0 then
             TeleportService:TeleportToPlaceInstance(PlaceId, servers[math.random(1, #servers)], game.Players.LocalPlayer)
         else
-            return Notify("Serverhop Couldn't find a server.")
+            return warn("Serverhop couldn't find a server.")
         end
     else
-        warn("Incompatible Exploit Your exploit does not support this command (missing request)")
+        warn("Incompatible exploit. Your exploit does not support this command (missing request).")
     end
 end)
 
-Section2:CreateButton("Rejoin", function()
+-- Rejoin Button
+Window:Button("Rejoin", function()
     game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId)
 end)
 
-Section2:CreateButton("Infinity Yield", function()
+-- Infinity Yield Button
+Window:Button("Infinity Yield", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source"))()
 end)
