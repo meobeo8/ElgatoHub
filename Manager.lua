@@ -7,7 +7,7 @@ local Section1 = Tab:NewSection("Manager Config")
 
 local SelectConfig
 
-Section1:CreateDropdown("Select Game", {"Verse Piece", "Meme Sea", "Error Zone", "Second Piece"}, 1, function(va)
+Section1:CreateDropdown("Select Game", {"Verse Piece", "Meme Sea", "Error Zone", "Second Piece", "Pet Go"}, 1, function(va)
     SelectConfig = va
 end)
 
