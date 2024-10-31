@@ -38,3 +38,7 @@ spawn(function()
         end)
     end
 end)
+
+for _, v in next, getconnections(game:GetService("Players").LocalPlayer.Idled) do
+    v:Disable()
+end
