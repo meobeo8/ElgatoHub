@@ -26,3 +26,15 @@ if a == 1 or a == 2 then
 else
     game.Players.LocalPlayer:Kick("Need rejoin if you want to execute again")
 end
+
+spawn(function()
+    while wait(1) do
+        pcall(function()
+            for _, v in pairs(game:GetService("Lighting"):GetChildren()) do
+                if v.Name == "Blur" then
+                    v:Destroy()
+                end
+            end
+        end)
+    end
+end)
