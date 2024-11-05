@@ -5,6 +5,7 @@ local baseURL = "https://raw.githubusercontent.com/meobeo8/elgato/a/"
 local placeScripts = {
     [78681874345659] = "ErrorZone.lua",
     [86639052909924] = "VersePiece.lua",
+    [89438510123061] = "AnimeShadow.lua",
     [92998083931728] = "VersePieceRaid.lua"
 }
 local scriptName = placeScripts[Place]
