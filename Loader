@@ -6,6 +6,7 @@ local placeScripts = {
     [78681874345659] = "ErrorZone.lua",
     [89438510123061] = "AnimeShadow.lua",
     [86639052909924] = "VersePiece.lua",
+    [119477642078428] = "VersePieceRaid.lua",
     [95295765150201] = "RockFruit.lua"
 }
 local scriptName = placeScripts[Place]
