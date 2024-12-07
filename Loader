@@ -4,7 +4,6 @@ local GameName = game:GetService("MarketplaceService"):GetProductInfo(Place).Nam
 local baseURL = "https://raw.githubusercontent.com/meobeo8/elgato/a/"
 local placeScripts = {
     [78681874345659] = "ErrorZone.lua",
-    [89438510123061] = "AnimeShadow.lua",
     [86639052909924] = "VersePiece.lua",
     [119477642078428] = "VersePieceRaid.lua",
     [95295765150201] = "RockFruit.lua"
