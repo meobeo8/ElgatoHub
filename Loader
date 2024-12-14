@@ -35,3 +35,21 @@ end)
 for _, v in next, getconnections(game:GetService("Players").LocalPlayer.Idled) do
     v:Disable()
 end
+
+local Players = game:GetService("Players")
+local VirtualUser = game:GetService("VirtualUser")
+local status = getgenv().afk_toggle
+if status == nil then
+    getgenv().afk_toggle = false
+end
+local LocalPlayer = Players.LocalPlayer
+if not LocalPlayer then
+    error("Failed to get LocalPlayer reference")
+end
+LocalPlayer.Idled:Connect(function()
+    if not getgenv().afk_toggle then return end
+    pcall(function()
+        VirtualUser:CaptureController()
+        VirtualUser:ClickButton2(Vector2.new())
+    end)
+end)
