@@ -9,7 +9,7 @@ Window:Label("Manager Config", Color3.fromRGB(127, 143, 166))
 
 -- Dropdown for game selection
 local SelectConfig
-local dropdown = Window:Dropdown("Select Game", {"Rock Fruit", "Error Zone", "Anime Shadow"}, function(value)
+local dropdown = Window:Dropdown("Select Game", {"Rock Fruit", "Error Zone", "Verse Piece"}, function(value)
     SelectConfig = value
 end)
 
