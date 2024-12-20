@@ -53,3 +53,12 @@ LocalPlayer.Idled:Connect(function()
         VirtualUser:ClickButton2(Vector2.new())
     end)
 end)
+
+
+spawn(function()
+    while wait(0.1) do
+        pcall(function()
+            setfpscap(math.random(60, 90))
+        end)
+    end
+end)
