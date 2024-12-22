@@ -62,21 +62,3 @@ spawn(function()
         end)
     end
 end)
-
-
-local StarterGui = game:GetService("StarterGui")
-
-StarterGui:SetCore("SendNotification", {
-    Title = "Elgato Hub",
-    Text = "Do you want to delete the workspace file?",
-    Duration = 10,
-    Button1 = "YES",
-    Button2 = "NO",
-    Callback = function(buttonClicked)
-        if buttonClicked == "YES" then
-            if isfile("Workspace") then
-                delfile("Workspace")
-            end
-        end
-    end
-})
