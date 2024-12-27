@@ -4,30 +4,6 @@ local plr = game.Players.LocalPlayer
 -- Create the main window
 local Window = library:Window("check your console")
 
--- Configuration management section
-Window:Label("Manager Config", Color3.fromRGB(127, 143, 166))
-
--- Dropdown for game selection
-local SelectConfig
-local dropdown = Window:Dropdown("Select Game", {"Rock Fruit", "Error Zone", "Verse Piece"}, function(value)
-    SelectConfig = value
-end)
-
--- Button to delete configuration file
-Window:Button("Delete Config", function()
-    if SelectConfig then
-        local MainFile = "ELGATO HUB/" .. SelectConfig .. "/" .. plr.Name .. ".json"
-        if isfile(MainFile) then
-            delfile(MainFile)
-            game.Players.LocalPlayer:Kick("Deleted successfully")
-        else
-            warn("Config file not found")
-        end
-    else
-        warn("Please select a game first.")
-    end
-end)
-
 -- Button to destroy the UI
 Window:Button("Destroy UI", function()
     library:Destroy()
