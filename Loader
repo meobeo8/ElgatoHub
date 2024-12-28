@@ -6,6 +6,7 @@ local placeScripts = {
     [78681874345659] = "ErrorZone.lua",
     [86639052909924] = "VersePiece.lua",
     [10450270085] = "JujutsuInfinite.lua",
+    [16379688837] = "JujutsuInfinite.lua",
     [111347281646457] = "MoodengFruit.lua",
     [95295765150201] = "RockFruit.lua"
 }
@@ -54,7 +55,6 @@ LocalPlayer.Idled:Connect(function()
         VirtualUser:ClickButton2(Vector2.new())
     end)
 end)
-
 
 spawn(function()
     while wait(0.1) do
