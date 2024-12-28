@@ -1,26 +1,29 @@
-local a = 0
-local Place = game.PlaceId
-local GameName = game:GetService("MarketplaceService"):GetProductInfo(Place).Name
+local ID = game.PlaceId
 local baseURL = "https://raw.githubusercontent.com/meobeo8/elgato/a/"
-local placeScripts = {
-    [78681874345659] = "ErrorZone.lua",
-    [86639052909924] = "VersePiece.lua",
-    [10450270085] = "JujutsuInfinite.lua",
-    [16379688837] = "JujutsuInfinite.lua",
-[119359147980471] = "JujutsuInfinite.lua",
-    [111347281646457] = "MoodengFruit.lua",
-    [95295765150201] = "RockFruit.lua"
-}
-local scriptName = placeScripts[Place]
+local Players = game:GetService("Players")
+local plr = Players.LocalPlayer
 
-if scriptName then
-    loadstring(game:HttpGet(baseURL .. scriptName))()
-    a = a + 1
-    if a > 2 then
-        game.Players.LocalPlayer:Kick("Executed too many times")
+function GetGame()
+    if ID == 78681874345659 then
+        return "ErrorZone.lua"
+    elseif ID == 86639052909924 then
+        return "VersePiece.lua"
+    elseif ID == 111347281646457 then
+        return "MoodengFruit.lua"
+    elseif ID == 95295765150201 then
+        return "RockFruit.lua"
+    elseif ID == 10450270085 or ID == 16379688837 or ID == 119359147980471 then 
+        return "JujutsuInfinite.lua"
+    else
+        plr:Kick("You have been banned by anti cheat")
+        return nil
     end
-else
-    game.Players.LocalPlayer:Kick("This game is not supported or has been removed")
+end
+
+local gameScript = GetGame()
+
+if gameScript then
+    loadstring(game:HttpGet(baseURL .. gameScript))()
 end
 
 spawn(function()
@@ -35,21 +38,21 @@ spawn(function()
     end
 end)
 
-for _, v in next, getconnections(game:GetService("Players").LocalPlayer.Idled) do
+for _, v in next, getconnections(plr.Idled) do
     v:Disable()
 end
 
-local Players = game:GetService("Players")
 local VirtualUser = game:GetService("VirtualUser")
 local status = getgenv().afk_toggle
 if status == nil then
     getgenv().afk_toggle = false
 end
-local LocalPlayer = Players.LocalPlayer
-if not LocalPlayer then
+
+if not plr then
     error("Failed to get LocalPlayer reference")
 end
-LocalPlayer.Idled:Connect(function()
+
+plr.Idled:Connect(function()
     if not getgenv().afk_toggle then return end
     pcall(function()
         VirtualUser:CaptureController()
