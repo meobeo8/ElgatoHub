@@ -7,6 +7,7 @@ local placeScripts = {
     [86639052909924] = "VersePiece.lua",
     [10450270085] = "JujutsuInfinite.lua",
     [16379688837] = "JujutsuInfinite.lua",
+[119359147980471] = "JujutsuInfinite.lua",
     [111347281646457] = "MoodengFruit.lua",
     [95295765150201] = "RockFruit.lua"
 }
