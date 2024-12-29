@@ -15,7 +15,7 @@ function GetGame()
     elseif ID == 10450270085 or ID == 16379688837 or ID == 119359147980471 or ID == 16379684339 or ID == 78904562518018 then 
         return "JujutsuInfinite.lua"
     else
-        plr:Kick("Ramdom kick for fun")
+        plr:Kick("you have been kicked nigga")
         return nil
     end
 end
