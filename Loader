@@ -12,6 +12,8 @@ function GetGame()
         return "MoodengFruit.lua"
     elseif ID == 95295765150201 then
         return "RockFruit.lua"
+   elseif ID == 118693886221846 then
+        return "AutoStoryline.lua"
     elseif ID == 10450270085 or ID == 16379688837 or ID == 119359147980471 or ID == 16379684339 or ID == 78904562518018 then 
         return "JujutsuInfinite.lua"
     else
