@@ -4,9 +4,7 @@ local Players = game:GetService("Players")
 local plr = Players.LocalPlayer
 
 function GetGame()
-    if ID == 78681874345659 then
-        return "ErrorZone.lua"
-    elseif ID == 86639052909924 then
+    if ID == 86639052909924 then
         return "VersePiece.lua"
     elseif ID == 111347281646457 then
         return "MoodengFruit.lua"
@@ -17,7 +15,7 @@ function GetGame()
     elseif ID == 10450270085 or ID == 16379688837 or ID == 119359147980471 or ID == 16379684339 or ID == 78904562518018 then 
         return "JujutsuInfinite.lua"
     else
-       -- plr:Kick("you have been kicked nigga")
+       print("dont support")
         return nil
     end
 end
