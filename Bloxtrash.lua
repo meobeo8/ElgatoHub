@@ -43,67 +43,23 @@ spawn(function()
     end
 end)
 
-OwO:Toggle("Auto Farm Mastery", false, function(bool)
-    _G.FarmMas = bool
-    SaveSettings()
+OwO:Slider("Custom Mastery",0,1000000,1000, function(value)
+    _G.Mas = value
 end)
 
-spawn(function()
-    while wait(1) do
-        pcall(function()
-            if _G.FarmMas then
-                local args = {
-                    [1] = "EMMFOSS__!ZCNSJNXCSDWQSANBX",
-                    [2] = "GiveMasteryEXPTO__Smthh",
-                    [3] = {
-                        [1] = plr,
-                        [2] = plr.PlayerStats.UsingBloxFruit.Value,
-                        [3] = 9e9,
-                        [4] = true
-                    }
-                }
+OwO:Button("Add Mastery", function()
+    local args = {
+        [1] = "EMMFOSS__!ZCNSJNXCSDWQSANBX",
+        [2] = "GiveMasteryEXPTO__Smthh",
+        [3] = {
+            [1] = plr,
+            [2] = plr.PlayerStats.UsingBloxFruit.Value,
+            [3] = _G.Mas,
+            [4] = true
+        }
+    }
 
-                game:GetService("ReplicatedStorage"):WaitForChild("ALLREMBINDS"):WaitForChild("MainRemoteEvent"):FireServer(unpack(args))
-            end
-        end)
-    end
-end)
-
-OwO:Toggle("Kill Other Players", false, function(bool)
-    _G.KillAll = bool
-    SaveSettings()
-end)
-
-spawn(function()
-    while wait(1) do
-        pcall(function()
-            if _G.KillAll then
-                for _, v in ipairs(workspace.Characters:GetChildren()) do
-                    if v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") and v.Humanoid.Health > 0 then
-                        if v.Name ~= plr.Name and not string.find(v.Name, "dummey") and v.Team ~= plr.Team then
-                            local maxHealth = v.Humanoid.MaxHealth
-                            for i = 1, 2 do
-                                local args = {
-                                    [1] = "EMMFOSS__!ZCNSJNXCSDWQSANBX",
-                                    [2] = "Main_DamgeR___",
-                                    [3] = {
-                                        [1] = v,
-                                        [2] = {
-                                            ["Using"] = _G.Settings.Main["NameWeapon"],
-                                            ["Damge"] = maxHealth,
-                                            ["FromPlayer"] = plr
-                                        }
-                                    }
-                                }
-
-                                game:GetService("ReplicatedStorage"):WaitForChild("ALLREMBINDS"):WaitForChild("MainRemoteEvent"):FireServer(unpack(args))
-                            end
-                        end
-                    end
-                end
-            end
-        end)
-    end
+    game:GetService("ReplicatedStorage"):WaitForChild("ALLREMBINDS"):WaitForChild("MainRemoteEvent"):FireServer(unpack(args))
 end)
 
 local Players = game:GetService("Players")
