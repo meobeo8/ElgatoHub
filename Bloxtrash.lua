@@ -53,32 +53,20 @@ OwO1:Button("Coppy Discord", function()
     print("Discord link copied to clipboard!")
 end)
 
-OwO:Label("Auto Chest", Color3.fromRGB(127, 143, 166))
-
-OwO:Toggle("Auto Chest", false, function(bool)
-    _G.AutoChest = bool
-end)
-
-spawn(function()
-    while wait() do
-        pcall(function()
-            if _G.AutoChest then
-                for _, v in ipairs(Workspace.World.Chests:GetChildren()) do
-                    if v:FindFirstChild("TouchInterest") then
-                        firetouchinterest(plr.Character.HumanoidRootPart, v, 0)
-                        wait(1)
-                        firetouchinterest(plr.Character.HumanoidRootPart, v, 1)
-                    end
-                end
-            end
-        end)
-    end
-end)
-
 OwO:Label("Farm Mastery", Color3.fromRGB(127, 143, 166))
 
 OwO:Slider("Custom Mastery", 0, 100000, 1000, function(value)
     _G.Mas = value
+end)
+
+OwO:Button("Collect All Chest", function()
+    for _, v in ipairs(Workspace.World.Chests:GetChildren()) do
+        if v:FindFirstChild("TouchInterest") then
+            firetouchinterest(plr.Character.HumanoidRootPart, v, 0)
+            wait(1)
+            firetouchinterest(plr.Character.HumanoidRootPart, v, 1)
+        end
+    end
 end)
 
 OwO:Button("Add Mastery", function()
