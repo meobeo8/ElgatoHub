@@ -105,3 +105,47 @@ spawn(function()
         end)
     end
 end)
+
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.Parent = player:WaitForChild("PlayerGui")
+
+local frame = Instance.new("Frame")
+frame.Size = UDim2.new(0, 300, 0, 150)
+frame.Position = UDim2.new(0.5, -150, 0.5, -75)
+frame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
+frame.Parent = screenGui
+
+local title = Instance.new("TextLabel")
+title.Text = "Elgato Hub"
+title.Size = UDim2.new(1, 0, 0.4, 0)
+title.BackgroundTransparency = 1
+title.TextScaled = true
+title.TextColor3 = Color3.new(1, 1, 1)
+title.Parent = frame
+
+local description = Instance.new("TextLabel")
+description.Text = "Pls join my Discord"
+description.Size = UDim2.new(1, 0, 0.4, 0)
+description.Position = UDim2.new(0, 0, 0.4, 0)
+description.BackgroundTransparency = 1
+description.TextScaled = true
+description.TextColor3 = Color3.new(1, 1, 1)
+description.Parent = frame
+
+local button = Instance.new("TextButton")
+button.Text = "Yes"
+button.Size = UDim2.new(0.4, 0, 0.2, 0)
+button.Position = UDim2.new(0.3, 0, 0.8, 0)
+button.BackgroundColor3 = Color3.new(0.3, 0.6, 1)
+button.TextScaled = true
+button.TextColor3 = Color3.new(1, 1, 1)
+button.Parent = frame
+
+button.MouseButton1Click:Connect(function()
+    setclipboard("https://discord.gg/BUZwDbH47z")
+    print("Discord link copied to clipboard!")
+    screenGui:Destroy()
+end)
