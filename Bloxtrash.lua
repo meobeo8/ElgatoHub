@@ -17,14 +17,46 @@ local plr = Players.LocalPlayer
 local hmr = plr.Character:FindFirstChild("HumanoidRootPart")
 local PlayerGUI = plr:FindFirstChildOfClass("PlayerGui")
 
-
-local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/TranVanBao1411/Library/retard/TurtleUI.lua"))()
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/turtle"))()
 
 local OwO = library:Window("bao ♥️ dat")
 
+local OwO1 = library:Window("elgato ♥️ appealscat")
+
+OwO1:Label("Get Fruit", Color3.fromRGB(127, 143, 166))
+
+local FruitNames = {}
+
+for _, v in pairs(game:GetService("ReplicatedStorage").AllAnims.NotToPllAnims:GetChildren()) do
+    if string.find(v.Name, "Fruit") then
+        table.insert(FruitNames, v.Name)
+    end
+end
+
+local dropdown = OwO1:Dropdown("Select Fruit", FruitNames, function(name)
+    local args = {
+        [1] = "EMMFOSS__!ZCNSJNXCSDWQSANBX",
+        [2] = "AddToolToBackpackKKK",
+        [3] = {
+            [1] = name,
+            [2] = plr.Backpack,
+            [3] = true,
+            [4] = true
+        }
+    }
+
+    game:GetService("ReplicatedStorage").ALLREMBINDS:WaitForChild("MainRemoteEvent"):FireServer(unpack(args))
+end)
+
+OwO1:Button("Coppy Discord", function()
+    setclipboard("https://discord.gg/BUZwDbH47z")
+    print("Discord link copied to clipboard!")
+end)
+
+OwO:Label("Auto Chest", Color3.fromRGB(127, 143, 166))
+
 OwO:Toggle("Auto Chest", false, function(bool)
     _G.AutoChest = bool
-    SaveSettings()
 end)
 
 spawn(function()
@@ -34,7 +66,7 @@ spawn(function()
                 for _, v in ipairs(Workspace.World.Chests:GetChildren()) do
                     if v:FindFirstChild("TouchInterest") then
                         firetouchinterest(plr.Character.HumanoidRootPart, v, 0)
-                        wait()
+                        wait(1)
                         firetouchinterest(plr.Character.HumanoidRootPart, v, 1)
                     end
                 end
@@ -43,7 +75,9 @@ spawn(function()
     end
 end)
 
-OwO:Slider("Custom Mastery",0,1000000,1000, function(value)
+OwO:Label("Farm Mastery", Color3.fromRGB(127, 143, 166))
+
+OwO:Slider("Custom Mastery", 0, 100000, 1000, function(value)
     _G.Mas = value
 end)
 
@@ -58,50 +92,5 @@ OwO:Button("Add Mastery", function()
             [4] = true
         }
     }
-
     game:GetService("ReplicatedStorage"):WaitForChild("ALLREMBINDS"):WaitForChild("MainRemoteEvent"):FireServer(unpack(args))
-end)
-
-local Players = game:GetService("Players")
-local player = Players.LocalPlayer
-
-local screenGui = Instance.new("ScreenGui")
-screenGui.Parent = player:WaitForChild("PlayerGui")
-
-local frame = Instance.new("Frame")
-frame.Size = UDim2.new(0, 300, 0, 150)
-frame.Position = UDim2.new(0.5, -150, 0.5, -75)
-frame.BackgroundColor3 = Color3.new(0.2, 0.2, 0.2)
-frame.Parent = screenGui
-
-local title = Instance.new("TextLabel")
-title.Text = "Elgato Hub"
-title.Size = UDim2.new(1, 0, 0.4, 0)
-title.BackgroundTransparency = 1
-title.TextScaled = true
-title.TextColor3 = Color3.new(1, 1, 1)
-title.Parent = frame
-
-local description = Instance.new("TextLabel")
-description.Text = "Pls join my Discord"
-description.Size = UDim2.new(1, 0, 0.4, 0)
-description.Position = UDim2.new(0, 0, 0.4, 0)
-description.BackgroundTransparency = 1
-description.TextScaled = true
-description.TextColor3 = Color3.new(1, 1, 1)
-description.Parent = frame
-
-local button = Instance.new("TextButton")
-button.Text = "Yes"
-button.Size = UDim2.new(0.4, 0, 0.2, 0)
-button.Position = UDim2.new(0.3, 0, 0.8, 0)
-button.BackgroundColor3 = Color3.new(0.3, 0.6, 1)
-button.TextScaled = true
-button.TextColor3 = Color3.new(1, 1, 1)
-button.Parent = frame
-
-button.MouseButton1Click:Connect(function()
-    setclipboard("https://discord.gg/BUZwDbH47z")
-    print("Discord link copied to clipboard!")
-    screenGui:Destroy()
 end)
