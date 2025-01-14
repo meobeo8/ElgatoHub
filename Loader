@@ -1,24 +1,27 @@
+repeat wait() until game:IsLoaded()
 local ID = game.PlaceId
 local baseURL = "https://raw.githubusercontent.com/meobeo8/elgato/a/"
 local Players = game:GetService("Players")
 local plr = Players.LocalPlayer
 
 function GetGame()
+    local ID = game.PlaceId
     if ID == 86639052909924 then
         return "VersePiece.lua"
     elseif ID == 111347281646457 then
         return "MoodengFruit.lua"
     elseif ID == 95295765150201 then
         return "RockFruit.lua"
-   elseif ID == 118693886221846 then
-        return "AutoStoryline.lua"
-    elseif ID == 10450270085 or ID == 16379688837 or ID == 119359147980471 or ID == 16379684339 or ID == 78904562518018 then 
+    elseif ID == 10450270085 or ID == 16379688837 or ID == 119359147980471 or ID == 16379684339 or ID == 78904562518018 then
         return "JujutsuInfinite.lua"
     else
-       print("dont support")
         return nil
     end
 end
+
+repeat wait() until GetGame() ~= nil
+
+print("Game Supported: " .. GetGame())
 
 local gameScript = GetGame()
 
