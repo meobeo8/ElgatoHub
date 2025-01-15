@@ -8,12 +8,19 @@ function GetGame()
     local ID = game.PlaceId
     if ID == 86639052909924 then
         return "VersePiece.lua"
+
     elseif ID == 111347281646457 then
         return "MoodengFruit.lua"
+
+    elseif ID == 119477642078428 then
+        return "VersePieceDungeon.lua"
+
     elseif ID == 95295765150201 then
         return "RockFruit.lua"
+
     elseif ID == 10450270085 or ID == 16379688837 or ID == 119359147980471 or ID == 16379684339 or ID == 78904562518018 then
         return "JujutsuInfinite.lua"
+
     else
         return nil
     end
