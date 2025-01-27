@@ -15,6 +15,9 @@ function GetGame()
     elseif ID == 95295765150201 then
         return "RockFruit.lua"
 
+    elseif ID == 18192562963 then
+        return "CongDongVietNam.lua"
+
     elseif ID == 10450270085 or ID == 16379688837 or ID == 119359147980471 or ID == 16379684339 or ID == 78904562518018 then
         return "JujutsuInfinite.lua"
 
@@ -65,12 +68,4 @@ plr.Idled:Connect(function()
         VirtualUser:CaptureController()
         VirtualUser:ClickButton2(Vector2.new())
     end)
-end)
-
-spawn(function()
-    while wait(0.1) do
-        pcall(function()
-            setfpscap(90)
-        end)
-    end
 end)
