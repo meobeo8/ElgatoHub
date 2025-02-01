@@ -12,7 +12,7 @@ function GetGame()
     elseif ID == 111347281646457 then
         return "MoodengFruit.lua"
 
-    elseif ID == 95295765150201 then
+    elseif ID == 95295765150201  or ID == 72064813230771 then
         return "RockFruit.lua"
 
     elseif ID == 10450270085 or ID == 16379688837 or ID == 119359147980471 or ID == 16379684339 or ID == 78904562518018 then
