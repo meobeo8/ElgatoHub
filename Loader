@@ -3,32 +3,37 @@ local ID = game.PlaceId
 local baseURL = "https://raw.githubusercontent.com/meobeo8/elgato/a/"
 local Players = game:GetService("Players")
 local plr = Players.LocalPlayer
+local VirtualUser = game:GetService("VirtualUser")
 
 function GetGame()
     local ID = game.PlaceId
     if ID == 86639052909924 then
         return "VersePiece.lua"
-
-    elseif ID == 95295765150201  or ID == 72064813230771 then
+    elseif ID == 95295765150201 or ID == 72064813230771 then
         return "RockFruit.lua"
-
     elseif ID == 10450270085 or ID == 16379688837 or ID == 119359147980471 or ID == 16379684339 or ID == 78904562518018 then
         return "JujutsuInfinite.lua"
-
     else
+        warn("Not supported")
         return nil
-warn("Not support ")
     end
 end
 
-repeat wait() until GetGame() ~= nil
-
-print("Game Supported: " .. GetGame())
-
 local gameScript = GetGame()
+if not gameScript then
+    return
+end
 
-if gameScript then
-    loadstring(game:HttpGet(baseURL .. gameScript))()
+print("Game Supported: " .. gameScript)
+
+local success, response = pcall(function()
+    return game:HttpGet(baseURL .. gameScript)
+end)
+
+if success and response then
+    loadstring(response)()
+else
+    warn("Failed to fetch script for game")
 end
 
 spawn(function()
@@ -43,24 +48,22 @@ spawn(function()
     end
 end)
 
-for _, v in next, getconnections(plr.Idled) do
-    v:Disable()
+if getconnections then
+    for _, v in next, getconnections(plr.Idled) do
+        v:Disable()
+    end
 end
 
-local VirtualUser = game:GetService("VirtualUser")
-local status = getgenv().afk_toggle
-if status == nil then
-    getgenv().afk_toggle = false
-end
+getgenv().afk_toggle = getgenv().afk_toggle or false
 
-if not plr then
+if plr then
+    plr.Idled:Connect(function()
+        if not getgenv().afk_toggle then return end
+        pcall(function()
+            VirtualUser:CaptureController()
+            VirtualUser:ClickButton2(Vector2.new())
+        end)
+    end)
+else
     error("Failed to get LocalPlayer reference")
 end
-
-plr.Idled:Connect(function()
-    if not getgenv().afk_toggle then return end
-    pcall(function()
-        VirtualUser:CaptureController()
-        VirtualUser:ClickButton2(Vector2.new())
-    end)
-end)
