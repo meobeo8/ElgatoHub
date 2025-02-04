@@ -48,22 +48,14 @@ spawn(function()
     end
 end)
 
-if getconnections then
-    for _, v in next, getconnections(plr.Idled) do
-        v:Disable()
-    end
+local VirtualUser = game:GetService("VirtualUser")
+local plr = game:GetService("Players").LocalPlayer
+
+for _, v in next, getconnections(plr.Idled) do
+    v:Disable()
 end
 
-getgenv().afk_toggle = getgenv().afk_toggle or false
-
-if plr then
-    plr.Idled:Connect(function()
-        if not getgenv().afk_toggle then return end
-        pcall(function()
-            VirtualUser:CaptureController()
-            VirtualUser:ClickButton2(Vector2.new())
-        end)
-    end)
-else
-    error("Failed to get LocalPlayer reference")
-end
+plr.Idled:Connect(function()
+    VirtualUser:CaptureController()
+    VirtualUser:ClickButton2(Vector2.new())
+end)
