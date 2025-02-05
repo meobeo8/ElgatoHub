@@ -8,7 +8,6 @@ local VirtualUser = game:GetService("VirtualUser")
 function GetGame()
     local ID = game.PlaceId
     if ID == 86639052909924 then
-game.Players.LocalPlayer:Kick("Wait for fix")
         return "VersePiece.lua"
     elseif ID == 95295765150201 or ID == 72064813230771 then
         return "RockFruit.lua"
