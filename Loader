@@ -47,15 +47,3 @@ spawn(function()
         end)
     end
 end)
-
-local VirtualUser = game:GetService("VirtualUser")
-local plr = game:GetService("Players").LocalPlayer
-
-for _, v in next, getconnections(plr.Idled) do
-    v:Disable()
-end
-
-plr.Idled:Connect(function()
-    VirtualUser:CaptureController()
-    VirtualUser:ClickButton2(Vector2.new())
-end)
