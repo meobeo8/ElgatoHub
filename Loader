@@ -1,6 +1,5 @@
 repeat wait() until game:IsLoaded()
 local ID = game.PlaceId
-local baseURL = "https://raw.githubusercontent.com/meobeo8/elgato/a/"
 local Players = game:GetService("Players")
 local plr = Players.LocalPlayer
 local VirtualUser = game:GetService("VirtualUser")
@@ -19,15 +18,14 @@ function GetGame()
     end
 end
 
-local gameScript = GetGame()
-if not gameScript then
+if not  GetGame() then
     return
 end
 
-print("Game Supported: " .. gameScript)
+print("Game Supported: " ..  GetGame())
 
 local success, response = pcall(function()
-    return game:HttpGet(baseURL .. gameScript)
+    return game:HttpGet("https://raw.githubusercontent.com/meobeo8/elgato/a/" ..  GetGame())
 end)
 
 if success and response then
